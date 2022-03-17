@@ -48,9 +48,9 @@
 # the_file.close()
 
 # create a function to generate summary reports for melon deliveries in any day
-def generate_summary_report(day, txt_file):
+def generate_summary_report(day):
     print("Day", day)
-    the_file = open(txt_file)
+    the_file = open(f"um-deliveries-day-{day}.txt")
     for line in the_file:
         line = line.rstrip()
         words = line.split('|')
@@ -64,4 +64,5 @@ def generate_summary_report(day, txt_file):
 
     return True
 
-generate_summary_report("1", "um-deliveries-day-1.txt")
+for i in range(1, 4):
+    generate_summary_report(i)
